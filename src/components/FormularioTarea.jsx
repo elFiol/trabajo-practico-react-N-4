@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 import ListaTareas from './ListaTareas';
 
 const FormularioTarea = () => {
@@ -8,7 +9,7 @@ const FormularioTarea = () => {
 
     const handlerSubmit = (e) => {
         e.preventDefault()
-        setTareas([...tareas, { id: tareas.length, nombre: tarea }])
+        setTareas([...tareas, { id: uuidv4(),nombre: tarea }])
         setTarea("")
     }
     const borrarTarea = (id) => {
